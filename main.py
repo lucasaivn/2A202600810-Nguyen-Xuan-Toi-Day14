@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import re
 import time
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
@@ -10,7 +11,7 @@ from agent.main_agent import MainAgent
 load_dotenv()
 
 # ============================================================
-# COST TRACKER — Đếm tokens và tính chi phí mỗi lần eval
+# COST TRACKER
 # ============================================================
 PRICING = {
     "gpt-4o-mini":   {"input": 0.15 / 1_000_000, "output": 0.60 / 1_000_000},
@@ -133,11 +134,12 @@ class MultiModelJudge:
             api_key=os.getenv("FIREWORKS_API_KEY"),
             base_url="https://api.fireworks.ai/inference/v1"
         )
+        self.fireworks_semaphore = asyncio.Semaphore(1)
 
     async def evaluate_multi_judge(self, question: str, answer: str, ground_truth: str) -> dict:
         score_a, score_b = await asyncio.gather(
             self._judge_with_model("gpt-4o-mini", question, answer, ground_truth),
-            self._judge_with_model("accounts/fireworks/models/llama-v3p1-70b-instruct", question, answer, ground_truth)
+            self._judge_with_model("accounts/fireworks/models/qwen3p7-plus", question, answer, ground_truth)
         )
         agreement_rate = 1.0 if abs(score_a - score_b) <= 1.0 else 0.0
         final_score = (score_a + score_b) / 2
@@ -147,7 +149,7 @@ class MultiModelJudge:
         return {
             "final_score": round(final_score, 2),
             "agreement_rate": agreement_rate,
-            "scores_by_model": {"gpt-4o-mini": score_a, "gpt-3.5-turbo": score_b},
+            "scores_by_model": {"gpt-4o-mini": score_a, "qwen3p7-plus (fireworks)": score_b},
             "reasoning": conflict_note or f"Cả 2 model đồng thuận. Score: {final_score:.1f}/5"
         }
 
@@ -162,17 +164,42 @@ Câu trả lời cần chấm: {answer}
 
 Điểm (1-5):"""
 
-        client = self.fireworks_client if "fireworks" in model else self.openai_client
-        resp = await client.chat.completions.create(
-            model=model,
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=5,
-            temperature=0
-        )
+        is_fireworks = "fireworks" in model
+        client = self.fireworks_client if is_fireworks else self.openai_client
+        if is_fireworks:
+            async with self.fireworks_semaphore:
+                for attempt in range(5):
+                    try:
+                        await asyncio.sleep(1.0)
+                        resp = await client.chat.completions.create(
+                            model=model,
+                            messages=[{"role": "user", "content": prompt}],
+                            max_tokens=500,
+                            temperature=0
+                        )
+                        break
+                    except Exception as e:
+                        if "429" in str(e) or "RATE_LIMIT" in str(e).upper():
+                            wait = 2 ** attempt * 2
+                            print(f"   [Fireworks 429] retry in {wait}s (attempt {attempt+1}/5)")
+                            await asyncio.sleep(wait)
+                        else:
+                            raise
+                else:
+                    return 3.0
+        else:
+            resp = await client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=500,
+                temperature=0
+            )
         cost_tracker.record(model, resp.usage)
         try:
-            return float(resp.choices[0].message.content.strip())
-        except ValueError:
+            content = resp.choices[0].message.content.strip()
+            numbers = re.findall(r'\b[1-5]\b', content)
+            return float(numbers[-1]) if numbers else 3.0
+        except (ValueError, IndexError):
             return 3.0
 
 
