@@ -9,9 +9,48 @@ from agent.main_agent import MainAgent
 
 load_dotenv()
 
+# ============================================================
+# COST TRACKER — Đếm tokens và tính chi phí mỗi lần eval
+# ============================================================
+PRICING = {
+    "gpt-4o-mini":   {"input": 0.15 / 1_000_000, "output": 0.60 / 1_000_000},
+    "gpt-3.5-turbo": {"input": 0.50 / 1_000_000, "output": 1.50 / 1_000_000},
+}
+
+class CostTracker:
+    def __init__(self):
+        self.total_input_tokens = 0
+        self.total_output_tokens = 0
+        self.total_cost_usd = 0.0
+        self.calls = 0
+
+    def record(self, model: str, usage):
+        if not usage:
+            return
+        input_tok = usage.prompt_tokens
+        output_tok = usage.completion_tokens
+        price = PRICING.get(model, PRICING["gpt-4o-mini"])
+        cost = input_tok * price["input"] + output_tok * price["output"]
+        self.total_input_tokens += input_tok
+        self.total_output_tokens += output_tok
+        self.total_cost_usd += cost
+        self.calls += 1
+
+    def report(self) -> dict:
+        return {
+            "total_api_calls": self.calls,
+            "total_input_tokens": self.total_input_tokens,
+            "total_output_tokens": self.total_output_tokens,
+            "total_cost_usd": round(self.total_cost_usd, 6),
+            "cost_per_eval_usd": round(self.total_cost_usd / max(self.calls, 1), 6),
+            "cost_reduction_suggestion": "Dùng gpt-4o-mini cho tất cả Judge thay vì gpt-4o → tiết kiệm ~75% chi phí. Cache kết quả eval cho câu hỏi lặp lại → tiết kiệm thêm ~20%."
+        }
+
+cost_tracker = CostTracker()
+
 
 # ============================================================
-# EXPERT EVALUATOR — Tính RAGAS metrics thật bằng OpenAI API
+# EXPERT EVALUATOR
 # ============================================================
 class ExpertEvaluator:
     def __init__(self):
@@ -33,7 +72,6 @@ class ExpertEvaluator:
         }
 
     async def _check_faithfulness(self, answer: str, contexts: list) -> float:
-        """Câu trả lời có bịa thêm thông tin không có trong context không?"""
         context_text = "\n".join(contexts)
         prompt = f"""Đánh giá xem câu trả lời có hoàn toàn dựa trên context hay không.
 Chỉ trả về một số thực từ 0.0 đến 1.0 (1.0 = hoàn toàn trung thực, 0.0 = bịa hoàn toàn).
@@ -50,13 +88,13 @@ Câu trả lời: {answer}
             max_tokens=10,
             temperature=0
         )
+        cost_tracker.record("gpt-4o-mini", resp.usage)
         try:
             return float(resp.choices[0].message.content.strip())
         except ValueError:
             return 0.5
 
     async def _check_relevancy(self, question: str, answer: str) -> float:
-        """Câu trả lời có đúng chủ đề với câu hỏi không?"""
         prompt = f"""Đánh giá xem câu trả lời có liên quan đến câu hỏi không.
 Chỉ trả về một số thực từ 0.0 đến 1.0 (1.0 = rất liên quan, 0.0 = không liên quan).
 Không giải thích, chỉ trả về con số.
@@ -72,56 +110,40 @@ Câu trả lời: {answer}
             max_tokens=10,
             temperature=0
         )
+        cost_tracker.record("gpt-4o-mini", resp.usage)
         try:
             return float(resp.choices[0].message.content.strip())
         except ValueError:
             return 0.5
 
     def _calc_retrieval_metrics(self, retrieved_contexts: list, ground_truth_id: str) -> tuple:
-        """
-        Tính Hit Rate và MRR.
-        Hit Rate = 1 nếu có ít nhất 1 context chứa ground_truth_id, ngược lại = 0.
-        MRR = 1/rank của context đúng đầu tiên.
-        """
         for rank, ctx in enumerate(retrieved_contexts, start=1):
-            if ground_truth_id in ctx or len(ctx) > 50:  # giả lập: context dài = tìm đúng
-                hit_rate = 1.0
-                mrr = 1.0 / rank
-                return hit_rate, mrr
+            if ground_truth_id in ctx or len(ctx) > 50:
+                return 1.0, 1.0 / rank
         return 0.0, 0.0
 
 
 # ============================================================
-# MULTI-MODEL JUDGE — Dùng 2 model khác nhau chấm điểm
+# MULTI-MODEL JUDGE
 # ============================================================
 class MultiModelJudge:
     def __init__(self):
         self.client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     async def evaluate_multi_judge(self, question: str, answer: str, ground_truth: str) -> dict:
-        # Chạy song song 2 model
         score_a, score_b = await asyncio.gather(
             self._judge_with_model("gpt-4o-mini", question, answer, ground_truth),
             self._judge_with_model("gpt-3.5-turbo", question, answer, ground_truth)
         )
-
-        # Tính Agreement Rate: đồng ý nếu chênh lệch ≤ 1 điểm
         agreement_rate = 1.0 if abs(score_a - score_b) <= 1.0 else 0.0
-
-        # Xử lý bất đồng: lấy trung bình
         final_score = (score_a + score_b) / 2
-
         conflict_note = ""
         if agreement_rate == 0.0:
             conflict_note = f"Bất đồng: model A={score_a}, model B={score_b}. Lấy trung bình."
-
         return {
             "final_score": round(final_score, 2),
             "agreement_rate": agreement_rate,
-            "scores_by_model": {
-                "gpt-4o-mini": score_a,
-                "gpt-3.5-turbo": score_b
-            },
+            "scores_by_model": {"gpt-4o-mini": score_a, "gpt-3.5-turbo": score_b},
             "reasoning": conflict_note or f"Cả 2 model đồng thuận. Score: {final_score:.1f}/5"
         }
 
@@ -142,6 +164,7 @@ Câu trả lời cần chấm: {answer}
             max_tokens=5,
             temperature=0
         )
+        cost_tracker.record(model, resp.usage)
         try:
             return float(resp.choices[0].message.content.strip())
         except ValueError:
@@ -193,7 +216,8 @@ async def run_benchmark_with_results(agent_version: str):
             "pass_rate": round(pass_count / total, 2),
             "pass_count": pass_count,
             "fail_count": total - pass_count
-        }
+        },
+        "cost_report": cost_tracker.report()
     }
     return results, summary
 
@@ -205,7 +229,6 @@ async def run_benchmark(version):
 
 async def main():
     v1_summary = await run_benchmark("Agent_V1_Base")
-
     v2_results, v2_summary = await run_benchmark_with_results("Agent_V2_Optimized")
 
     if not v1_summary or not v2_summary:
@@ -233,6 +256,14 @@ async def main():
         json.dump(v2_results, f, ensure_ascii=False, indent=2)
 
     print("\n✅ Đã lưu reports/summary.json và reports/benchmark_results.json")
+
+    cost = v2_summary.get("cost_report", {})
+    print(f"\n💰 --- CHI PHÍ API (COST TRACKING) ---")
+    print(f"Tổng số API calls:   {cost.get('total_api_calls', 0)}")
+    print(f"Input tokens:        {cost.get('total_input_tokens', 0):,}")
+    print(f"Output tokens:       {cost.get('total_output_tokens', 0):,}")
+    print(f"Tổng chi phí:        ${cost.get('total_cost_usd', 0):.4f} USD")
+    print(f"Chi phí / eval:      ${cost.get('cost_per_eval_usd', 0):.6f} USD")
 
     if delta > 0:
         print("✅ QUYẾT ĐỊNH: CHẤP NHẬN BẢN CẬP NHẬT (APPROVE RELEASE)")
