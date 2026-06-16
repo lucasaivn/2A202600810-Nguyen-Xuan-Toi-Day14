@@ -128,12 +128,16 @@ Câu trả lời: {answer}
 # ============================================================
 class MultiModelJudge:
     def __init__(self):
-        self.client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.openai_client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.fireworks_client = AsyncOpenAI(
+            api_key=os.getenv("FIREWORKS_API_KEY"),
+            base_url="https://api.fireworks.ai/inference/v1"
+        )
 
     async def evaluate_multi_judge(self, question: str, answer: str, ground_truth: str) -> dict:
         score_a, score_b = await asyncio.gather(
             self._judge_with_model("gpt-4o-mini", question, answer, ground_truth),
-            self._judge_with_model("gpt-3.5-turbo", question, answer, ground_truth)
+            self._judge_with_model("accounts/fireworks/models/llama-v3p1-70b-instruct", question, answer, ground_truth)
         )
         agreement_rate = 1.0 if abs(score_a - score_b) <= 1.0 else 0.0
         final_score = (score_a + score_b) / 2
@@ -158,7 +162,8 @@ Câu trả lời cần chấm: {answer}
 
 Điểm (1-5):"""
 
-        resp = await self.client.chat.completions.create(
+        client = self.fireworks_client if "fireworks" in model else self.openai_client
+        resp = await client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
             max_tokens=5,
