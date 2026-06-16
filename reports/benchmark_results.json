@@ -1,0 +1,1152 @@
+[
+  {
+    "test_case": "Trí tuệ nhân tạo là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Trí tuệ nhân tạo là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5008733999566175,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 1.0,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Machine Learning là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Machine Learning là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5009067999781109,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.5,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Deep Learning sử dụng gì để học?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Deep Learning sử dụng gì để học?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5009146999800578,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Các ứng dụng của AI bao gồm những gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Các ứng dụng của AI bao gồm những gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5009216000325978,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Large Language Models là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Large Language Models là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5009280000231229,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "AI có thể thực hiện những nhiệm vụ nào?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'AI có thể thực hiện những nhiệm vụ nào?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5015891999937594,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "AI có thể nấu ăn không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'AI có thể nấu ăn không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.501622200012207,
+    "ragas": {
+      "faithfulness": 0.0,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Hệ thống AI có thể học từ dữ liệu không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Hệ thống AI có thể học từ dữ liệu không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5016296999529004,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 3.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=2.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "pass"
+  },
+  {
+    "test_case": "Deep Learning có sử dụng dữ liệu lớn không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Deep Learning có sử dụng dữ liệu lớn không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5016395000275224,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "AI có thể chơi thể thao không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'AI có thể chơi thể thao không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5016475999727845,
+    "ragas": {
+      "faithfulness": 0.7,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "RAG là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'RAG là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5082205000217073,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Quy trình RAG có mấy bước chính?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Quy trình RAG có mấy bước chính?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5082585000200197,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Người dùng làm gì trong quy trình RAG?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Người dùng làm gì trong quy trình RAG?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5082686999812722,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.5,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Vector Database dùng để làm gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Vector Database dùng để làm gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.508276799984742,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 3.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=2.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "pass"
+  },
+  {
+    "test_case": "Chunking là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Chunking là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5082848000456579,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Hallucination xảy ra khi nào?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Hallucination xảy ra khi nào?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5066485999850556,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Ai là người tạo ra kỹ thuật RAG?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Ai là người tạo ra kỹ thuật RAG?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5066799999913201,
+    "ragas": {
+      "faithfulness": 0.0,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 1.0,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 1.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 1.0/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Có bao nhiêu bước trong quy trình tổng hợp câu trả lời?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Có bao nhiêu bước trong quy trình tổng hợp câu trả lời?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5066871999879368,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Vector Database có vai trò gì trong quy trình RAG?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Vector Database có vai trò gì trong quy trình RAG?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.506692600029055,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.0,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Quá trình tìm kiếm trong RAG diễn ra ở bước nào?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Quá trình tìm kiếm trong RAG diễn ra ở bước nào?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5066978000104427,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "RAGAS là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'RAGAS là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5066591000068001,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Hit Rate là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Hit Rate là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5066933000343852,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Faithfulness đo lường điều gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Faithfulness đo lường điều gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5067013999796472,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 3.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=2.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "pass"
+  },
+  {
+    "test_case": "MRR được định nghĩa như thế nào?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'MRR được định nghĩa như thế nào?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5067080000299029,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Context Precision là một metric trong RAGAS không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Context Precision là một metric trong RAGAS không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5067140000173822,
+    "ragas": {
+      "faithfulness": 0.0,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 3.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=2.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "pass"
+  },
+  {
+    "test_case": "Answer Relevancy đo lường điều gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Answer Relevancy đo lường điều gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.505691000027582,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 3.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=2.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "pass"
+  },
+  {
+    "test_case": "Có bao nhiêu metrics trong RAGAS?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Có bao nhiêu metrics trong RAGAS?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5057247999939136,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "RAGAS có liên quan đến việc đo lường năng lực của con người không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'RAGAS có liên quan đến việc đo lường năng lực của con người không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5057327999966219,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.0,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Từ viết tắt MRR có nghĩa là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Từ viết tắt MRR có nghĩa là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5057393999886699,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Hệ thống RAG được đánh giá dựa trên những gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Hệ thống RAG được đánh giá dựa trên những gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5057458000374027,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Benchmark là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Benchmark là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5068446000223048,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Golden Dataset được tạo ra như thế nào?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Golden Dataset được tạo ra như thế nào?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.506878099986352,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.5,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 3.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=2.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "pass"
+  },
+  {
+    "test_case": "Regression Testing trong AI là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Regression Testing trong AI là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5068851000396535,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Synthetic Data Generation (SDG) là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Synthetic Data Generation (SDG) là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5068906999658793,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Async programming có lợi ích gì trong benchmark?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Async programming có lợi ích gì trong benchmark?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.506896200007759,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Batch processing có tác dụng gì với dataset?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Batch processing có tác dụng gì với dataset?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5000834999955259,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Có phải Benchmark là một thuật toán cụ thể không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Có phải Benchmark là một thuật toán cụ thể không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5001218999968842,
+    "ragas": {
+      "faithfulness": 0.0,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Golden Dataset có thể được tạo ra bằng cách nào khác ngoài thủ công?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Golden Dataset có thể được tạo ra bằng cách nào khác ngoài thủ công?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5001302000018768,
+    "ragas": {
+      "faithfulness": 0.0,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Synthetic Data Generation có sử dụng machine learning không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Synthetic Data Generation có sử dụng machine learning không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5001369999954477,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Async programming làm giảm tốc độ benchmark hay tăng tốc độ?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Async programming làm giảm tốc độ benchmark hay tăng tốc độ?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5044134000199847,
+    "ragas": {
+      "faithfulness": 0.0,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 1.0,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 1.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 1.0/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Failure Analysis là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Failure Analysis là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.500403699988965,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 3.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=2.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "pass"
+  },
+  {
+    "test_case": "Failure Clustering có mục đích gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Failure Clustering có mục đích gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5004482999793254,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Phân tích 5 Whys là kỹ thuật gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Phân tích 5 Whys là kỹ thuật gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5004606999573298,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Root Cause Analysis có chức năng gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Root Cause Analysis có chức năng gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.500470100028906,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Action Plan là gì?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Action Plan là gì?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5004789999802597,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.5,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 4.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=4.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Có bao nhiêu tầng trong Root Cause Analysis?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Có bao nhiêu tầng trong Root Cause Analysis?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5085447000456043,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.1,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 1.5,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 2.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 1.5/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Failure Analysis diễn ra trước hay sau khi chạy benchmark?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Failure Analysis diễn ra trước hay sau khi chạy benchmark?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5085864999564365,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 1.0,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Kỹ thuật nào giúp tìm nguyên nhân gốc rễ?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Kỹ thuật nào giúp tìm nguyên nhân gốc rễ?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5085975999827497,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.2,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 0.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 3.0
+      },
+      "reasoning": "Bất đồng: model A=1.0, model B=3.0. Lấy trung bình."
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Có cần phải làm gì sau khi hoàn thành Action Plan không?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Có cần phải làm gì sau khi hoàn thành Action Plan không?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.508605599985458,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.8,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 2.0,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 2.0,
+        "gpt-3.5-turbo": 2.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 2.0/5"
+    },
+    "status": "fail"
+  },
+  {
+    "test_case": "Các bước nào có thể thêm vào Action Plan?",
+    "agent_response": "Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi 'Các bước nào có thể thêm vào Action Plan?' như sau: [Câu trả lời mẫu].",
+    "latency": 0.5086128999828361,
+    "ragas": {
+      "faithfulness": 0.8,
+      "relevancy": 0.5,
+      "retrieval": {
+        "hit_rate": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "judge": {
+      "final_score": 1.0,
+      "agreement_rate": 1.0,
+      "scores_by_model": {
+        "gpt-4o-mini": 1.0,
+        "gpt-3.5-turbo": 1.0
+      },
+      "reasoning": "Cả 2 model đồng thuận. Score: 1.0/5"
+    },
+    "status": "fail"
+  }
+]
